@@ -1,9 +1,8 @@
 "use server"
 import ForceRefresh from '@/components/force-refresh'
 import cloudinary from 'cloudinary'
-import { revalidatePath } from 'next/cache'
 
-const SetAsFavoriteAction = async (publicid: string, MarkAsFavorite: boolean,path:string ) => {
+const SetAsFavoriteAction = async (publicid: string, MarkAsFavorite: boolean, ) => {
     
     if (MarkAsFavorite) {
 
@@ -12,8 +11,7 @@ const SetAsFavoriteAction = async (publicid: string, MarkAsFavorite: boolean,pat
         
         await cloudinary.v2.uploader.remove_tag("favorite", [publicid])
     }
-    await new Promise((resolve:any)=>setTimeout(resolve,1000))
-    revalidatePath(path)
+
     
 }
 

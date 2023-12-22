@@ -2,7 +2,9 @@
 
 import UploadButton from './uploadButton';
 import cloudinary from 'cloudinary'
-import CloudinaryImage from './CloudinaryImage';
+import CloudinaryImage from '../../components/ui/CloudinaryImage';
+import { ImageGrid } from '@/components/widgets/image-grid';
+import GalleryGrid from './galleryGrid';
 
 export type SearchResult = {
   public_id: string;
@@ -14,7 +16,7 @@ const Gallery = async () => {
     .expression('resource_type:image')
     .with_field("tags")
     .sort_by('created_at', 'desc')
-    .max_results(5)
+    .max_results(15)
     .execute() as { resources: SearchResult[] }
 
   return (
@@ -26,22 +28,9 @@ const Gallery = async () => {
         </h1>
         <UploadButton />
       </div>
-      <div className='grid grid-cols-4 gap-x-4 gap-y-6'>
-        {data.resources.map((item, i) => (
-
-
-          <CloudinaryImage
-          path="/gallery"
-            key={i}
-           imageData={item}
-            alt="Description of my image"
-            height="300"
-            width="400"
-            sizes="100vw" />
-
-
-        ))}
-      </div>
+      <GalleryGrid images={data.resources} />
+    
+     
     </section>
   )
 }
