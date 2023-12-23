@@ -38,7 +38,7 @@ const CloudinaryImage = (props:  {imageData:SearchResult ,onUnheart?:(unHeartedR
           }}
         />
       }
-    <ImageMenu />
+    <ImageMenu image={imageData} />
 
     </div>
   )

@@ -1,11 +1,12 @@
 "use client"
 
-import CloudinaryImage from '../../components/ui/CloudinaryImage';
+import { SearchResult } from '@/app/gallery/page';
+import CloudinaryImage from '@/components/ui/CloudinaryImage';
 import { ImageGrid } from '@/components/widgets/image-grid';
-import { SearchResult } from './page';
 
 
-const GalleryGrid =  ({images}:{images:SearchResult[]}) => {
+
+const AlbumGrid =  ({images}:{images:SearchResult[]}) => {
 
 
   return (
@@ -27,4 +28,4 @@ const GalleryGrid =  ({images}:{images:SearchResult[]}) => {
   )
 }
 
-export default GalleryGrid
+export default AlbumGrid
