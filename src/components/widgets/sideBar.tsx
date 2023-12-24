@@ -40,7 +40,7 @@ export default async function SideMenu() {
             {folders.map((folder) => (
               <Button asChild variant="ghost" key={folder.name} className="pl-6  w-full justify-start flex gap-2" >
                 <Link href={`/albums/${folder.path}`}  >
-                  <Heart />
+                 
                   {folder.name}
                 </Link>
               </Button>
