@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { useState } from "react"
 
 export default function EditPage({ searchParams: { publicId } }: { searchParams: { publicId: string } }) {
-    const [transformation, setTransformation] = useState<undefined | "generative-fill" | "blur" | "grayscale" | "restore" | "removeBackground">()
+    const [transformation, setTransformation] = useState<undefined | "generative-fill"  | "restore" | "removeBackground">()
     const [pendingprompt, setpendingPrompt] = useState("")
     const [prompt, setPrompt] = useState("")
     console.log(publicId)
@@ -37,14 +37,6 @@ export default function EditPage({ searchParams: { publicId } }: { searchParams:
                     }}>Apply Generative Fill </Button>
                           <Input value={pendingprompt} onChange={e => setpendingPrompt(e.target.value)} />
                     </div>
-                    {/* apply Blur */}
-                    <Button onClick={() => {
-                        setTransformation("blur")
-                    }}>Apply Blur </Button>
-                    {/* apply grayscale */}
-                    <Button onClick={() => {
-                        setTransformation("grayscale")
-                    }}>convert into grayscale </Button>
                     {/* apply restore */}
                     <Button onClick={() => {
                         setTransformation("restore")
@@ -66,15 +58,7 @@ export default function EditPage({ searchParams: { publicId } }: { searchParams:
                             }}
                         />}
 
-                    {transformation == "blur" &&
-                        <CldImage src={publicId} alt="something here" width={300} height={300}
-                            blur="800"
-                        />}
-                    {transformation == "grayscale" &&
-                        <CldImage src={publicId} alt="something here" width={300} height={300}
-                            sizes="100vw"
-                            grayscale
-                        />}
+                    
                     {transformation == "restore" &&
                         <CldImage src={publicId} alt="something here" width={300} height={300}
                             crop="fill"
