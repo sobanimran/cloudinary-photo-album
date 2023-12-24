@@ -1,5 +1,4 @@
 import cloudinary from "cloudinary";
-import { CldUploadButton } from 'next-cloudinary';
 import { AlbumCard } from "./album-card";
 
 export type Folder = { name: string; path: string };

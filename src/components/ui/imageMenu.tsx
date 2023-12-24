@@ -31,7 +31,7 @@ export function ImageMenu({ image }: { image: SearchResult }) {
           </DropdownMenuItem>
 
           <DropdownMenuItem asChild >
-           <Link href={`/edit?publicId=${encodeURI(image.public_id)}`}  ><PencilIcon className="mr-2 ml-1 w-4 h-4" /> Edit</Link>
+           <Link className="cursor-pointer" href={`/edit?publicId=${encodeURIComponent(image.public_id)}`}  ><PencilIcon className="mr-2 ml-1 w-4 h-4" /> Edit</Link>
           </DropdownMenuItem>
 
         </DropdownMenuContent>
