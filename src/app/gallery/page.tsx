@@ -15,7 +15,7 @@ const Gallery = async () => {
     .expression('resource_type:image')
     .with_field("tags")
     .sort_by('created_at', 'desc')
-    .max_results(15)
+    .max_results(30)
     .execute() as { resources: SearchResult[] }
 
   return (

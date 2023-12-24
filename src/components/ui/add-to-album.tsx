@@ -26,11 +26,11 @@ export function Addtoalbum({ image, onClose }: { image: SearchResult, onClose: (
         onClose();
       }
     }}>
-      <DialogTrigger asChild>
-        <Button variant="secondary" className="p-0 m-0 ">
+      <DialogTrigger asChild className="">
+        <Button variant="ghost" className=" pl-1 ">
 
-          <FolderPlus className="" />
-          <span>Add to Album</span>
+          <FolderPlus className="w-4 h-4  ml-2  mr-2"  />
+          Add to Album
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
